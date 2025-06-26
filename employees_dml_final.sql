@@ -1,16 +1,14 @@
--- ЗАДАНИЕ 1: Добавить нового сотрудника с ID = 202, если его нет
-SELECT * FROM employees WHERE emp_no = 202;
-
+-- ЗАДАНИЕ 1: Добавить нового сотрудника
 INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date)
-VALUES (202, '1992-05-15', 'Nikolay', 'Ivanov', 'M', '2025-06-25');
+VALUES (999901, '1992-05-15', 'Nikolay', 'Ivanov', 'M', '2025-06-25');
 
-SELECT * FROM employees WHERE emp_no = 202;
+SELECT * FROM employees WHERE emp_no = 999901;
 
 -- ЗАДАНИЕ 2: Обновить зарплату сотрудника с ID = 101 на 60000
 SELECT * FROM employees WHERE emp_no = 101;
 SELECT * FROM salaries WHERE emp_no = 101;
 
-INSERT INTO employees VALUES (101, '1990-01-01', 'Test', 'User', 'M', '2025-06-25');
+INSERT INTO employees VALUES (101, '1990-01-01', 'Ivan', 'Zaharov', 'M', '2025-06-25');
 INSERT INTO salaries VALUES (101, 50000, '2024-01-01', '9999-01-01');
 
 UPDATE salaries SET salary = 60000 WHERE emp_no = 101;
@@ -26,7 +24,7 @@ SELECT * FROM employees WHERE emp_no = 202;
 SELECT * FROM employees WHERE emp_no = 103;
 
 INSERT INTO employees VALUES (103, '1993-03-03', 'Alex', 'Smith', 'M', '2025-06-25');
-INSERT INTO salaries VALUES (103, 55000, '2025-06-25', '9999-01-01');
+INSERT INTO salaries VALUES (103, 55000, '1993-03-03', '2025-06-25');
 
 SELECT * FROM salaries WHERE emp_no = 103 ORDER BY from_date DESC;
 
@@ -59,7 +57,6 @@ VALUES ('d011', 'New Product Development');
 SELECT * FROM departments WHERE dept_no = 'd011';
 
 -- ЗАДАНИЕ 8: Обновить имя департамента с ID = 3 на 'Marketing'
--- В базе departments ID — это dept_no (вида 'd003')
 SELECT * FROM departments WHERE dept_no = 'd003';
 
 UPDATE departments SET dept_name = 'Marketing1'
@@ -68,7 +65,6 @@ WHERE dept_no = 'd003';
 SELECT * FROM departments WHERE dept_no = 'd003';
 
 -- ЗАДАНИЕ 9: Удалить департамент с ID = 4, если в нём нет сотрудников
--- В базе ID 4 = dept_no = 'd004'
 SELECT * FROM dept_emp WHERE dept_no = 'd004';
 
 DELETE FROM departments
