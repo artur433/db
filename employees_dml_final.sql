@@ -62,7 +62,7 @@ SELECT * FROM departments WHERE dept_no = 'd011';
 -- В базе departments ID — это dept_no (вида 'd003')
 SELECT * FROM departments WHERE dept_no = 'd003';
 
-UPDATE departments SET dept_name = 'Marketing'
+UPDATE departments SET dept_name = 'Marketing1'
 WHERE dept_no = 'd003';
 
 SELECT * FROM departments WHERE dept_no = 'd003';
